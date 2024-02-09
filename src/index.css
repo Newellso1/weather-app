@@ -29,6 +29,8 @@ ul > li {
   border-radius: 0.75em;
   padding: 1em;
   background-color: #57bee727;
+  display: flex;
+  justify-content: center;
 }
 
 .weather-app > select {
@@ -37,10 +39,22 @@ ul > li {
   border-radius: 1em;
 }
 
+.weather-app > div {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid;
+  align-items: center;
+}
+
+.weather-app > div > img {
+  width: 7em;
+}
+
 .drop-down {
   text-align: center;
   font-size: 2em;
   padding: 0.25em;
+  width: 10em;
 }
 
 .drop-down-top {
