@@ -31,6 +31,7 @@ ul > li {
   background-color: #57bee727;
   display: flex;
   justify-content: center;
+  overflow: hidden;
 }
 
 .weather-app > select {
@@ -42,14 +43,32 @@ ul > li {
 .weather-app > div {
   display: flex;
   flex-direction: column;
-  border: 1px solid;
+  overflow: hidden;
   align-items: center;
 }
 
 .weather-app > div > img {
   width: 7em;
+  margin: 1.5em 0;
 }
 
+.weather-app > div > .stats {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  font-size: 1.1em;
+}
+
+.weather-app > div > .stats > div {
+  border: 2px solid;
+  border-radius: 1em;
+  width: 6.3em;
+  height: 6.3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .drop-down {
   text-align: center;
   font-size: 2em;

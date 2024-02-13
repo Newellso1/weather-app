@@ -25,7 +25,7 @@ export default function WeatherComponent({ city, setCity }) {
   }, [city]);
 
   const kelvinToCelsius = (kelvin) => {
-    return (kelvin - 273.15).toFixed(1);
+    return (kelvin - 273.15).toFixed(0);
   };
 
   return (
@@ -34,11 +34,28 @@ export default function WeatherComponent({ city, setCity }) {
         <div>
           <DropdownMenu city={city} setCity={setCity} />
           <img
+            alt=""
             src={`http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`}
           />
+          <div className="stats">
+            <div className="temp">
+              <h4>Temp</h4>
+              {kelvinToCelsius(weatherData.main.temp)}c
+            </div>
+            <div className="feel">
+              <h4>Feels like</h4>
+              {kelvinToCelsius(weatherData.main.feels_like)}c
+            </div>
+            <div className="wind">
+              <h4>Wind speed</h4>
+              {weatherData.wind.speed.toFixed(0)}mph
+            </div>
+          </div>
         </div>
       ) : (
-        <DropdownMenu city={city} setCity={setCity} />
+        <div>
+          <DropdownMenu city={city} setCity={setCity} />
+        </div>
       )}
     </div>
   );
